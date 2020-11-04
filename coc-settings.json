@@ -1,7 +1,8 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css","js","vue", "Markdown"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "js", "vue", "Markdown"],
+
   "explorer.file.showHiddenFiles": true,
-  "eslint.autoFixOnSave":true,
+  "eslint.autoFixOnSave": true,
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,

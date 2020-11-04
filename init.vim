@@ -17,6 +17,7 @@ nmap <space>f :CocCommand explorer --preset floating<CR>
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+
 " Tab completion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -43,7 +44,7 @@ let g:ctrlp_working_path_mode = 'ra'
 " Ignored files/directories from autocomplete (and CtrlP)
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/bundle/*,*/node_modules/.git
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-"syntax on
+" Theme
 colorscheme onedark
 set termguicolors
 
@@ -51,8 +52,8 @@ let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ }
 let g:airline_theme='onedark'
-"let g:airline_powerline_fonts = 1
-"set foldmethod=indent
+
+
 set norelativenumber
 set autoread
 set clipboard+=unnamedplus            " Maps yank to clipboard buffer (needs xsel)
