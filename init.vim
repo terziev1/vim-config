@@ -53,7 +53,8 @@ let g:lightline = {
       \ }
 let g:airline_theme='onedark'
 
-
+set title
+set hid
 set norelativenumber
 set autoread
 set clipboard+=unnamedplus            " Maps yank to clipboard buffer (needs xsel)
