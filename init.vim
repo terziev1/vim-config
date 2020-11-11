@@ -13,6 +13,7 @@ map <Space> <leader>
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " Explorer
 nmap <space>e :CocCommand explorer<CR>
+nmap <space>w <C-W>w
 nmap <space>f :CocCommand explorer --preset floating<CR>
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
