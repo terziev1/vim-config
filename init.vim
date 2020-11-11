@@ -52,7 +52,7 @@ let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ }
 let g:airline_theme='onedark'
-
+let g:vue_disable_pre_processors=1
 set title
 set hid
 set norelativenumber
