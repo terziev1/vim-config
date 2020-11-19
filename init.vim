@@ -7,6 +7,10 @@ Plug 'sheerun/vim-polyglot' "https://github.com/sheerun/vim-polyglot
 Plug 'preservim/nerdcommenter' "https://github.com/preservim/nerdcommenter
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "https://github.com/neoclide/coc.nvim
 Plug 'airblade/vim-gitgutter'  "https://github.com/airblade/vim-gitgutter
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
+
 call plug#end()
 " Leader Mapping
 map <Space> <leader>
@@ -18,7 +22,6 @@ nmap <space>f :CocCommand explorer --preset floating<CR>
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-
 " Tab completion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -31,7 +34,8 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
+" Emmet
+let g:user_emmet_leader_key=','
 " Coc Mappings
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -45,10 +49,10 @@ let g:ctrlp_working_path_mode = 'ra'
 " Ignored files/directories from autocomplete (and CtrlP)
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/bundle/*,*/node_modules/.git
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+":set mouse=a
 " Theme
 colorscheme onedark
 set termguicolors
-
 let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ }
