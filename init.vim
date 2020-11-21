@@ -9,7 +9,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} "https://github.com/neoclide/coc
 Plug 'airblade/vim-gitgutter'  "https://github.com/airblade/vim-gitgutter
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-surround'
+Plug 'leafOfTree/vim-svelte-plugin'
+Plug 'AndrewRadev/tagalong.vim'
 
 call plug#end()
 " Leader Mapping
@@ -18,7 +20,6 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " Explorer
 nmap <space>e :CocCommand explorer<CR>
 nmap <space>w <C-W>w
-nmap <space>f :CocCommand explorer --preset floating<CR>
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
@@ -36,21 +37,15 @@ function! s:check_back_space() abort
 endfunction
 " Emmet
 let g:user_emmet_leader_key=','
-" Coc Mappings
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> rn <Plug>(coc-rename)
-
+" Tagalong
+let g:tagalong_filetypes = ['html',"svelte","vue"]
 "Starting directory CtrlP
 let g:ctrlp_working_path_mode = 'ra'
-
 " Ignored files/directories from autocomplete (and CtrlP)
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/bundle/*,*/node_modules/.git
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-":set mouse=a
 " Theme
+syntax on
 colorscheme onedark
 set termguicolors
 let g:lightline = {
