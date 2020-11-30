@@ -7,12 +7,9 @@ Plug 'sheerun/vim-polyglot' "https://github.com/sheerun/vim-polyglot
 Plug 'preservim/nerdcommenter' "https://github.com/preservim/nerdcommenter
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "https://github.com/neoclide/coc.nvim
 Plug 'airblade/vim-gitgutter'  "https://github.com/airblade/vim-gitgutter
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'mattn/emmet-vim'
-"Plug 'tpope/vim-surround'
-Plug 'leafOfTree/vim-svelte-plugin'
-Plug 'AndrewRadev/tagalong.vim'
-
+Plug 'AndrewRadev/tagalong.vim',
+Plug 'dense-analysis/ale'
 call plug#end()
 " Leader Mapping
 map <Space> <leader>
@@ -46,6 +43,17 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/bundle/*,*/node_modules/.git
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 " Theme
 syntax on
+"au! BufNewFile,BufRead *.svelte set ft=html
+au BufNewFile,BufRead,BufReadPost *.svelte set syntax=html
+let g:ale_linter_aliases = {
+\   'svelte': ['javascript']
+\}
+let g:ale_linters = {
+\   'svelte': ['eslint']
+\}
+let g:ale_fixers = {
+\   'svelte': ['eslint']
+\}
 colorscheme onedark
 set termguicolors
 let g:lightline = {

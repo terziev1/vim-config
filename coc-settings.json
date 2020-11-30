@@ -1,10 +1,11 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css","svelte", "js", "vue", "Markdown"],
+  "coc.preferences.formatOnSaveFiletypes": ["html","css","svelte", "js", "vue", "Markdown"],
   "explorer.file.autoReveal": true,
   "explorer.file.showHiddenFiles": true,
   "eslint.autoFixOnSave": true,
+  "coc.preferences.diagnostic.displayByAle":true,
   "explorer.width": 30,
-  "svelte.plugin.typescript.enable":false,
+  "html.autoClosingTags":true,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
   "explorer.keyMappings.global": {
